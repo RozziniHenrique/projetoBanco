@@ -1,0 +1,37 @@
+/* 5. Coleções para gerenciar clientes e contas
+
+Crie uma classe Banco que terá listas de clientes e contas (ArrayList por exemplo).
+
+Essa classe será responsável por cadastrar novos clientes/contas e buscar clientes/contas existentes pelo número ou CPF.
+
+6. Menu de interação (console)
+
+Criar uma interface simples no main com Scanner para que o usuário possa:
+
+Criar conta
+
+Depositar
+
+Sacar
+
+Transferir
+
+Ver saldo
+
+Isso transforma o projeto em um sistema interativo de verdade.
+
+7. Persistência de dados
+
+Atualmente, ao fechar o programa, tudo se perde.
+
+Implementar gravação em arquivo de texto (ou até JSON/CSV) para salvar os clientes e contas.
+
+Próximo nível seria usar JDBC com SQLite ou MySQL.
+
+8. Refinamentos
+
+Criar exceções personalizadas (SaldoInsuficienteException, ContaNaoEncontradaException).
+
+Implementar herança se quiser (por exemplo, ContaCorrente e ContaPoupanca).
+
+Adicionar regras (juros, limite de saque, rendimento).

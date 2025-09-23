@@ -1,32 +1,35 @@
 package javaBanco;
 
 public class Cliente {
-    private int idCliente;
+    private static int nextCodigo = 0; // Contador global
+    private int Codigo;             // ID único do cliente
     private String nome;
     private String cpf;
     private String profissao;
     private int idade;
 
     // Construtor
-
-    public Cliente (){}
-    
-    public Cliente(int idCliente, String nome, String cpf, String profissao, int idade) {
-        this.idCliente = idCliente;
+    public Cliente(String nome, String cpf, String profissao, int idade) {
         this.nome = nome;
         this.cpf = cpf;
         this.profissao = profissao;
-        setIdade(idade); // Usa o setter para validar
+        setIdade(idade);
+
+        // Incrementa o contador e define o id
+        nextCodigo++;
+        this.Codigo = nextCodigo;
     }
 
-    // Getters e Setters
-    public int getIdCliente() {
-        return idCliente;
+    // Getters
+    
+    public int getCodigo() {
+        return Codigo;
     }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
+    public static int getnextCodigo() {
+        return nextCodigo;
     }
+        
 
     public String getNome() {
         return nome;
@@ -71,6 +74,11 @@ public class Cliente {
 
     // Exibir informações do cliente
     public void exibirDados() {
-        System.out.println("Cliente: " + nome + " | CPF: " + cpf + " | Profissão: " + profissao + " | Idade: " + idade);
+        System.out.println("ID: " + Codigo + " | Cliente: " + nome +
+                " | CPF: " + cpf + " | Profissão: " + profissao + " | Idade: " + idade);
+    }
+
+    public static void totalClientes() {
+        System.out.println("Total de clientes: " + nextCodigo);
     }
 }
