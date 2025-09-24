@@ -3,9 +3,9 @@ package javaBanco;
 import java.util.ArrayList;
 
 public class Banco {
-    ArrayList<Cliente> clientes = new ArrayList<>();
-    ArrayList<ContaCorrente> contasCorrentes = new ArrayList<>();
-    ArrayList<ContaPoupanca> contasPoupancas = new ArrayList<>();
+    private ArrayList<Cliente> clientes = new ArrayList<>();
+    private ArrayList<ContaCorrente> contasCorrentes = new ArrayList<>();
+    private ArrayList<ContaPoupanca> contasPoupancas = new ArrayList<>();
 
     public void adicionarCliente(Cliente cliente) {
         this.clientes.add(cliente);

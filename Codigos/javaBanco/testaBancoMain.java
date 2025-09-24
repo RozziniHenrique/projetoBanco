@@ -2,40 +2,33 @@ package javaBanco;
 
 public class testaBancoMain {
     public static void main(String[] args) {
-        // Criando os clientes (dados pessoais)
-        Cliente cliente01 = new Cliente("João Silva", "12345678901", "Engenheiro", 30);
-        Cliente cliente02 = new Cliente("Maria Oliveira", "98765432100", "Médica", 28);
-        Cliente cliente03 = new Cliente("Carlos Souza", "45678912300", "Professor", 35);
-
-        // Criando contas para os clientes (com saldo inicial)
-        Conta conta01 = new Conta(1001, cliente01, 500.0);
-        Conta conta02 = new Conta(1002, cliente02, 1000.0);
-        Conta conta03 = new Conta(1003, cliente03, 750.0);
- 
-        /*
-        // Alterando idade do cliente
-        cliente01.setIdade(31);
-
-        // Operações bancárias
-        conta01.transferir(conta02, 30);
-        conta01.exibirSaldo();
-        conta02.exibirSaldo();
-
-        conta03.transferir(conta01, 50);
-        conta03.exibirSaldo();
-        conta01.exibirSaldo();
-        */
-        // Exibindo dados do cliente
-        cliente01.exibirDados();
-        conta01.exibirDados();
-        cliente02.exibirDados();
-        conta02.exibirDados();
-        cliente03.exibirDados();
-        conta03.exibirDados();
-    
-    
-        Cliente.totalClientes();
+        Banco banco = new Banco();
+        //Criando Clientes
+        Cliente cliente1 = new Cliente("Alice Martins", "12345678900","Engenheira", 30);
+        Cliente cliente2 = new Cliente("Bob Fernandes", "98765432100", "Professor", 45);
         
+        //Adicionando Clientes ao Banco
+        banco.adicionarCliente(cliente1);
+        banco.adicionarCliente(cliente2);
+
+        //Criando Contas
+        ContaPoupanca contaPoupanca1 = new ContaPoupanca(2001, cliente2, 3000.0, 0.05);
+        ContaCorrente conta1 = new ContaCorrente(1001, cliente1, 5000.0, 1000.0);
+
+        //Adicionando Contas ao Banco
+        banco.adicionarContaPoupanca(contaPoupanca1);
+        banco.adicionarContaCorrente(conta1);
+
+        //Exibindo Clientes
+        System.out.println("Clientes no Banco:");
+        for (Cliente cliente : banco.getClientes()) {
+            cliente.exibirDados();
+        }
+
+        banco.buscarContaPorNumero(1001);
+        banco.buscarClientePorCPF("12345678900");
+
+        banco.getClientes();
 }
 
 }
