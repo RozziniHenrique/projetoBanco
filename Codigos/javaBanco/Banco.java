@@ -45,9 +45,3 @@ public class Banco {
         return clientes;
     }
 }
-
-/*5. Coleções para gerenciar clientes e contas
-
-Crie uma classe Banco que terá listas de clientes e contas (ArrayList por exemplo).
-
-Essa classe será responsável por cadastrar novos clientes/contas e buscar clientes/contas existentes pelo número ou CPF. */
