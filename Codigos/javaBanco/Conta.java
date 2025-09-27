@@ -1,6 +1,7 @@
 package javaBanco;
 
 public class Conta {
+    private static int contadorContas = 1; // Contador estático para gerar números únicos de conta
     private int numeroConta;
     private Cliente cliente;
     private double saldo;
@@ -9,19 +10,15 @@ public class Conta {
 
     public Conta(){}
     
-    public Conta(int numeroConta, Cliente cliente, double saldoInicial) {
-        this.numeroConta = numeroConta;
+    public Conta(Cliente cliente, double saldo) {
+        this.numeroConta = contadorContas++; // gera automaticamente
         this.cliente = cliente;
-        this.saldo = saldoInicial;
+        this.saldo = saldo;
     }
 
     // Getters e Setters
     public int getNumeroConta() {
         return numeroConta;
-    }
-
-    public void setNumeroConta(int numeroConta) {
-        this.numeroConta = numeroConta;
     }
 
     public Cliente getCliente() {

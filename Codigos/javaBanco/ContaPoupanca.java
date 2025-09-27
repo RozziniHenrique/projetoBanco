@@ -3,10 +3,12 @@ package javaBanco;
 public class ContaPoupanca extends Conta {
     private double taxaJuros;
 
-    public ContaPoupanca(int numero, Cliente cliente, double saldo, double taxaJuros) {
-        super(numero, cliente, saldo);
+
+    public ContaPoupanca(Cliente cliente, double saldo, double taxaJuros) {
+        super(cliente, saldo);
         this.taxaJuros = taxaJuros;
     }
+
 
     public double getTaxaJuros() {
         return taxaJuros;

@@ -3,10 +3,11 @@ package javaBanco;
 public class ContaCorrente extends Conta {
     private double limite;
 
-    public ContaCorrente(int numero, Cliente cliente, double saldo, double limite) {
-        super(numero, cliente, saldo);
+    public ContaCorrente(Cliente cliente, double saldo, double limite) {
+        super(cliente, saldo);
         this.limite = limite;
     }
+
 
     public double getLimite() {
         return limite;
